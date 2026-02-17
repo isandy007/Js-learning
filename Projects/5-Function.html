@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Odd/Even/Larger no/ Temperature</title>
+</head>
+<body>
+    
+
+    <script>
+        // To determine whether a number is odd or even using if-else statement.
+/*         let number=13;
+        let a=number % 2;
+        if(a===0){
+            console.log(`The entered no ${number} is Even`);
+        } else {
+            console.log(`The entered no ${number} is Odd`); 
+        } */ 
+
+
+        // To determine whether a number is odd or even using if-else in a function.
+/*         function determineOddEven (value) {
+            if(value%2===0){
+                console.log(`The no ${value} is Even`);
+            } else {
+                console.log(`The no ${value} is Odd`);
+            }
+        }
+        determineOddEven(20);
+        determineOddEven(21); */
+
+
+        // To determine whether a number is odd or even using if-else in a function and return the result instead of logging it.
+/*         function determineOddEven (value) {
+            if(value%2===0){
+                return `The no ${value} is Even`;
+            } else {
+                return `The no ${value} is Odd`;
+            }
+        }
+        console.log(determineOddEven(26));
+        console.log(determineOddEven(29)); */
+
+        
+        // To determine whether a number is odd or even using if-else in a function and return the result as boolean value instead of logging it.
+/*         function determineEven (value) {
+            let remainder=value%2;
+            let output= remainder==0;       // if remainder is 0, output will be true, otherwise false.
+            return output;
+        }
+        console.log(determineEven(40));
+        console.log(determineEven(41)); */
+
+
+        // To determine which number is larger using if-else statement in a function and log the result instead of returning it.
+/*         function determineLarger (num1 , num2) {
+            if (num1>num2){
+                console.log(`${num1} is greater than ${num2}.`);
+            } else if (num1<num2) {
+                console.log(`${num1} is smaller than ${num2}.`);
+            } else {`${num1} and ${num2} are same.`};
+        }
+        determineLarger(23, 25);
+        determineLarger(-23, -45); */
+
+
+        // To determine which number is larger using if-else statement in a function.
+/*         function determineLarger (num1 , num2) {
+            let num=num1-num2;
+            if (num>0){
+                console.log(`${num1} is greater than ${num2}.`);
+            } else if (num<0) {
+                console.log(`${num1} is smaller than ${num2}.`);
+            } else {`${num1} and ${num2} are same.`};
+        }
+        determineLarger(22, 25);
+        determineLarger(23, 43); */
+
+
+        // To determine which number is larger using if-else statement in a function and return the result instead of logging it.
+/*         function determineLarger(num1, num2) {
+            if(num1>num2){
+                return num1;
+            } else {
+                return num2;
+            }
+        }
+        console.log(determineLarger(33, 33));
+        console.log(determineLarger(32, -43)); */
+
+
+        // To determine which number is larger using ternary operator in a function and return the result instead of logging it.
+/*         function determineLarger(num1, num2) {
+            return num1>num2 ? num1 : num2;
+        }
+        console.log(determineLarger(32, 43));
+        console.log(determineLarger(32, -43)); */
+
+
+        // To determine which number is larger using ternary operator in a function and return the result as a string instead of logging it.
+/*         function determineLarger(num1, num2) {
+            return num1>num2 ? `${num1} > ${num2}` : `${num1} <= ${num2}`;
+        }
+        console.log(determineLarger(32, 43));
+        console.log(determineLarger(32, -43));
+        console.log(determineLarger(32, 32)); */
+
+
+        // To convert temperature from Celsius to Fahrenheit using a function.
+/*         function toFahrenheit (celciusValue) {
+            return 9/5*celciusValue + 32;
+        }
+        console.log(toFahrenheit(100));
+        console.log(toFahrenheit(0)); */
+
+
+        // To convert temperature from Fahrenheit to Celsius using a function and return the result instead of logging it.
+/*     function toCelcius (fahrenheitValue) {
+            return (fahrenheitValue-32)*5/9;
+        }
+        console.log(toCelcius(212));
+        console.log(toCelcius(32)); */
+    </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Calculator</title>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+    <div id="calculator">
+        <input type="text" id="display">
+        <div class="input-btn">
+            <button class="btn"
+            onclick="currentDisplay='';
+            document.querySelector('#display').value=currentDisplay;">c</button>
+
+            <button class="btn"
+             onclick="currentDisplay=currentDisplay+'1';document.querySelector('#display').value=currentDisplay;">1</button>
+
+            <button class="btn"
+            onclick="currentDisplay=currentDisplay+'2';document.querySelector('#display').value=currentDisplay;">2</button>
+
+            <button class="btn"
+            onclick="currentDisplay=currentDisplay+'+';document.querySelector('#display').value=currentDisplay;">+</button>
+
+            <button class="btn"
+            onclick="currentDisplay=currentDisplay+'3';document.querySelector('#display').value=currentDisplay;">3</button>
+
+            <button class="btn"
+            onclick="currentDisplay=currentDisplay+'4';document.querySelector('#display').value=currentDisplay;">4</button>
+
+            <button class="btn"
+            onclick="currentDisplay=currentDisplay+'-';document.querySelector('#display').value=currentDisplay;">-</button>
+
+            <button class="btn"
+            onclick="currentDisplay=currentDisplay+'5';document.querySelector('#display').value=currentDisplay;">5</button>
+
+            <button class="btn"
+            onclick="currentDisplay=currentDisplay+'6';document.querySelector('#display').value=currentDisplay;">6</button>
+
+            <button class="btn"
+            onclick="currentDisplay=currentDisplay+'*';document.querySelector('#display').value=currentDisplay;">*</button>
+
+            <button class="btn"
+            onclick="currentDisplay=currentDisplay+'7';document.querySelector('#display').value=currentDisplay;">7</button>
+
+            <button class="btn"
+            onclick="currentDisplay=currentDisplay+'8';document.querySelector('#display').value=currentDisplay;">8</button>
+
+            <button class="btn"
+            onclick="currentDisplay=currentDisplay+'/';document.querySelector('#display').value=currentDisplay;">/</button>
+
+            <button class="btn"
+            onclick="let result = eval(currentDisplay);currentDisplay=result;
+            document.querySelector('#display').value=currentDisplay;">=</button>
+
+            <button class="btn"
+            onclick="currentDisplay=currentDisplay+'9';document.querySelector('#display').value=currentDisplay;">9</button>
+
+            <button class="btn"
+            onclick="currentDisplay=currentDisplay+'0';document.querySelector('#display').value=currentDisplay;">0</button>
+
+            <button class="btn"
+            onclick="currentDisplay=currentDisplay+'.';document.querySelector('#display').value=currentDisplay;">.</button>
+        </div>
+    </div>
+    <script>
+        let currentDisplay='';
+        document.querySelector('#display').value=currentDisplay;
+    </script>
+    <p> pahle currentDisplay variable ko empty string se initialize kiya gaya hai. <br><br>
+        jab kisi no ya operator ke button par click kiya jata hai to currentDisplay me uska value conactinate ho jata hai aur currentDspaly ki value update ho jati hai. <br> fir currentDisplay ko display ke liye liye gaye html element me assign kar diya gaya hai . <br><br>
+       When c button is clicked currentDisplay is set to empty string and then displayed on input element. <br> <br>When = button is clicked eval function is used to evaluate the expression in currentDisplay and then the result is stored in currentDisplay and displayed on input element.  </p>
+</body>
+</html>

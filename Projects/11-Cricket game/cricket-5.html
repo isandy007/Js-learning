@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Cricket Game-2</title>
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Function with return value ki madad se computerChoice ko decide kiya gaya hai -->
+    <h1>Bat Ball Stump Game</h1>
+    <button onclick="
+    let computerChoice=generateComputerChoice();        // computerChoice variable ko generateComputerChoice function ke return value se initialize kiya gaya hai.
+    let resultMsg;
+    if (computerChoice==='Bat') {
+        resultMsg='Its a tie.';
+    } else if (computerChoice==='Ball') {
+        resultMsg='You won.';
+    } else if (computerChoice==='Stump') { 
+        resultMsg='Computer won.';
+    }
+    alert(`You have choosen Bat. Computer has choosen ${computerChoice} and ${resultMsg}`);
+    ">Bat</button>
+    
+    <button onclick="
+    computerChoice=generateComputerChoice();
+    if (computerChoice==='Bat') {
+        resultMsg='Computer won.';
+    } else if (computerChoice==='Ball') {
+        resultMsg='Its a tie.';
+    } else if (computerChoice==='Stump') { 
+        resultMsg='You won.';
+    }
+    alert(`You have choosen Ball. Computer has choosen ${computerChoice} and ${resultMsg}`);
+    ">Ball</button>
+
+    <button onclick="
+    computerChoice=generateComputerChoice();
+    if (computerChoice==='Bat') {
+        resultMsg='You won.';
+    } else if (computerChoice==='Ball') {
+        resultMsg='Computer won.';
+    } else if (computerChoice==='Stump') { 
+        resultMsg='Its a tie.';
+    }
+    alert(`You have choosen Stump. Computer has choosen ${computerChoice} and ${resultMsg}`);
+    ">Stump</button>
+
+    <script>
+        function generateComputerChoice () {            // ye function computer ke choice ko generate karega aur return karega. 
+            let randomNumber = Math.random() * 3;
+            if (randomNumber<=1) {
+                return 'Bat';
+            } else if (randomNumber <=2) {
+                return 'Ball';
+            } else {
+                return 'Stump';
+            }
+        }
+    </script>
+</body>
+</html>     

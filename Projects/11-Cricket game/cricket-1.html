@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Cricket Game</title>
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bat Ball Stump Game</h1>
+    <button onclick="
+    console.log('You have choosen Bat');            //to print the choice of user in console
+    //here computer choice is being determined by math.random. Math.random() generates a random number between 0 and 1. By multiplying it with 3, we get a random number between 0 and 3. We can then use this number to determine the computer's choice.
+    let randomNumber = Math.random() * 3;           
+    let computerChoice;                             
+    if (randomNumber>0 && randomNumber<=1) {
+        computerChoice='Bat';
+        console.log('Computer has choosen Bat');
+    } else if (randomNumber>1 && randomNumber <=2) {
+        computerChoice='Ball';
+        console.log('Computer has choosen Ball');
+    } else {
+        computerChoice='Stump';
+        console.log('Computer has choosen Stump');
+    }
+    // To print the winner after comparing the choices of user and computer.
+    if (computerChoice==='Bat') {
+        console.log(`You have choosen Bat. Computer has choosen ${computerChoice}. Its a tie.`);
+    } else if (computerChoice==='Ball') {
+        console.log(`You have choosen Bat. Computer has choosen ${computerChoice}. You won.`);
+    } else if (computerChoice==='Stump') { 
+        console.log(`You have choosen Bat. Computer has choosen ${computerChoice}. Computer won.`);
+    }
+    ">Bat</button>
+    
+    <button onclick="
+    console.log('You have choosen Ball');
+    //here computer choice is being determined by math.random. Math.random() generates a random number between 0 and 1. By multiplying it with 3, we get a random number between 0 and 3. We can then use this number to determine the computer's choice.
+    let randomNumber = Math.random() * 3;
+    let computerChoice;
+    if (randomNumber>0 && randomNumber<=1) {
+        computerChoice='Bat';
+        console.log('Computer has choosen Bat');
+    } else if (randomNumber>1 && randomNumber <=2) {
+        computerChoice='Ball';
+        console.log('Computer has choosen Ball');
+    } else {
+        computerChoice='Stump';
+        console.log('Computer has choosen Stump');
+    }
+    // To print the winner after comparing the choices of user and computer.
+    if (computerChoice==='Bat') {
+        console.log(`You have choosen Ball. Computer has choosen ${computerChoice}. Computer won.`);
+    } else if (computerChoice==='Ball') {
+        console.log(`You have choosen Ball. Computer has choosen ${computerChoice}. Its a tie.`);
+    } else if (computerChoice==='Stump') { 
+        console.log(`You have choosen Ball. Computer has choosen ${computerChoice}. You won.`);
+    }
+    ">Ball</button>
+
+    <button onclick="
+    console.log('You have choosen Stump');
+    // here computer choice is being determined by math.random. Math.random() generates a random number between 0 and 1. By multiplying it with 3, we get a random number between 0 and 3. We can then use this number to determine the computer's choice.
+    let randomNumber = Math.random() * 3;
+    let computerChoice;
+    if (randomNumber>0 && randomNumber<=1) {
+        computerChoice='Bat';
+        console.log('Computer has choosen Bat');
+    } else if (randomNumber>1 && randomNumber <=2) {
+        computerChoice='Ball';
+        console.log('Computer has choosen Ball');
+    } else {
+        computerChoice='Stump';
+        console.log('Computer has choosen Stump');
+    }
+    // To print the winner after comparing the choices of user and computer.
+    if (computerChoice==='Bat') {
+        console.log(`You have choosen Stump. Computer has choosen ${computerChoice}. You won.`);
+    } else if (computerChoice==='Ball') {
+        console.log(`You have choosen Stump. Computer has choosen ${computerChoice}. Computer won.`);
+    } else if (computerChoice==='Stump') { 
+        console.log(`You have choosen Stump. Computer has choosen ${computerChoice}. Its a tie.`);
+    }
+    ">Stump</button>
+    <!-- In this code, we have created a simple cricket game where the user can choose between Bat, Ball, and Stump. The computer's choice is determined randomly using Math.random(). After both the user and the computer have made their choices, we compare them to determine the winner and print the result in the console. The game is designed to be simple and easy to understand, making it a fun way to learn about basic programming concepts like random number generation and conditional statements. -->
+</body>
+</html>

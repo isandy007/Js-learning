@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+body{
+    background-color: rgb(170, 255, 255);
+    border: 5px solid red; 
+}
+.div1{
+    background-color: rgb(254, 18, 195);
+    border: 7px dashed rgb(253, 206, 37);
+    margin: 10px;
+    padding: 10px;
+    /* width: 90%; */
+    /* height: 1200px; */
+    /* display: inline; */
+    /* position:relative ; */
+    /* top: 30px; left: 30px; */
+    /* z-index: 0; */
+}
+header{
+    background-color: rgb(241, 241, 128);
+    border: 5px dashed blue;
+    margin: 10px;
+    padding: 10px;
+    /* width: 90%; */
+    /* height: 1100px; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    /* position: relative; */
+    /* top: 30px; left: 80px; */
+    /* z-index: 0; */
+}
+section{
+    background-color: rgb(13, 251, 255);
+    border: 5px dashed rgb(149, 1, 1);
+    margin: 10px;
+    padding: 10px;
+    /* width: 90%; */
+    /* height: 800px; */
+    /* display: inline; */
+    /* position: relative; */
+    /* top: 30px; left: 30px; */
+    /* z-index: 0; */
+}
+nav{
+    background-color: rgb(138, 138, 1);
+    border: 5px dashed rgb(255, 3, 3);
+    margin: 10px;
+    padding: 10px;
+    /* width: 90%; */
+    /* height: 800px; */
+    /* display: inline; */
+    /* position: relative; */
+    /* top: 30px; left: 80px; */
+    /* top: 30px; right: 10px; bottom:10px; left: 30px; */
+    /* z-index: 0; */
+}

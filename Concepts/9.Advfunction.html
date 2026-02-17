@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Advance functions</title>
+</head>
+<body>
+
+
+
+    <script>
+        // Basic way to declare a function. function keyword followed by the name of the function and parentheses. Inside the parentheses, we can define parameters that the function can take. The body of the function is enclosed in curly braces.
+/*         function sum(a,b){
+            return a+b;
+        }
+        console.log(sum(2,3));
+
+        let sumNew2 = sum;                      // We can assign the function to another variable
+        console.log(sumNew2(4,6));
+
+        console.log(typeof (sum));              // The type of sumNew2 is function
+        console.log(typeof (sumNew2)); */          // The type of sumNew2 is function
+
+
+        // Anonymous function: A function without a name. It can be assigned to a variable or passed as an argument to another function. Anonymous functions are often used in situations where a function is needed temporarily, such as in event handlers or callbacks.
+/*         let sumNew = function(a,b){
+            return a+b;
+        }
+        console.log(sumNew(2,5));
+
+        let sumNew3 = sumNew;               // We can assign the anonymous function to another variable
+        console.log(sumNew3(3,9));
+
+        console.log(typeof (sumNew));              // The type of sumNew is function
+        console.log(typeof (sumNew3));  */         // The type of sumNew3 is function
+
+
+        // Higher-order function: A function that takes another function as an argument or returns a function as its result. Higher-order functions are a powerful tool in functional programming and allow for more flexible and reusable code.
+/*         let sum = function(a,b){
+            return a+b;
+        }
+        let sumThreeNumbers = function(num1,num2,num3, sumTwoNumbers){     // We can pass a function as an argument to another function
+            let sum1=sumTwoNumbers(num1,num2);
+            return sum1+num3;
+        }
+        console.log(sumThreeNumbers(2,3,4,sum));  */                           // We can call the function and pass the anonymous function as an argument
+    
+
+        // Arrow function: A concise way to write functions in JavaScript. Arrow functions are anonymous and do not have their own 'this' context. They are often used for short, simple functions.
+/*         let sum  = function(a,b){
+            return a+b;
+        }
+        console.log(sum(5,6));
+        //OR
+        let sumArrow = (a,b) => {            // Arrow function: A concise way to write functions in JavaScript. Arrow functions are anonymous and do not have their own 'this' context. They are often used for short, simple functions.
+            return a+b;
+        }          
+        console.log(sum(6,6));
+        //OR
+        let sumArrowShort = (a,b) => a+b;     // If the function body contains only a single expression, we can omit the curly braces and the return keyword.
+        console.log(sumArrowShort(7,6)); */
+
+        // When we have only one parameter, we can omit the parentheses around the parameter.
+/*         let square = num => num*num;
+        console.log(square(5));
+        //OR
+        let square2 = function(num) {
+            return num*num;
+        }
+        //OR
+        function square3(num) {
+            return num*num;
+        }
+        console.log(square3(6)); */
+    
+        // setTimeout: A built-in function in JavaScript that allows us to execute a function after a specified delay. It takes two arguments: the function to be executed and the delay in milliseconds.
+/*         let alarm = function() {
+            console.log("Wake up!");
+        }
+        // OR  let alarm = ()  => console.log("Wake up!");
+        setTimeout(alarm, 5000);                            // We can call the setTimeout function and pass the alarm function as an argument. The alarm function will be executed after a delay of 2000 milliseconds (2 seconds).
+        console.log("Alarm set!");  */                         // This will be logged immediately, while the alarm function will be logged after 3 seconds.
+
+
+        // clearTimeout: A built-in function in JavaScript that allows us to cancel a timeout that was previously set with setTimeout. It takes a single argument, which is the identifier of the timeout to be canceled.
+/*         let alarm = () => console.log("Wake up!");
+        let timeoutId = setTimeout(alarm, 4000);            // We can call the setTimeout function and store the identifier of the timeout in a variable. The alarm function will be executed after a delay of 5000 milliseconds (2 seconds).    
+        console.log("Alarm set!");                          // This will be logged immediately, while the alarm function will be logged after 5 seconds.
+        console.log("Timeout ID: " + timeoutId);            // This will be logged immediately, while the alarm function will be logged after 5 seconds.
+        clearTimeout(timeoutId);  */                           // We can call the clearTimeout function and pass the identifier
+
+
+        // setInterval: A built-in function in JavaScript that allows us to execute a function repeatedly at specified intervals. It takes two arguments: the function to be executed and the interval in milliseconds.
+        let alarm = () => console.log(`Wake up! ${new Date()}`);  // We can call the setInterval function and pass the alarm function as an argument. The alarm function will be executed every 3000 milliseconds (3 seconds). The new Date().toLocaleTimeString() will log the current time when the alarm function is executed.
+        let intervalId = setInterval(alarm, 3000);         
+        setTimeout(() => clearInterval(intervalId), 12000);         // We can call the setInterval function and store the identifier of the interval in a variable. The alarm function will be executed every 3000 milliseconds (3 seconds). We can also use setTimeout to clear the interval after a certain amount of time (in this case, 10000 milliseconds or 10 seconds).
+
+    </script>
+    
+</body>
+</html>

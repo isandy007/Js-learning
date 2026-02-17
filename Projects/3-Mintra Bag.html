@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>VMintra Bag</title>
+    <style>
+        .bag-btn{
+            background-color: rgb(112, 231, 112);
+            border-radius: 10px;
+            border: none;
+            padding: 5px 15px;
+        }
+        .wish-btn{
+            padding: 5px 30px;
+            border-radius: 8px;
+            border: 1px solid black;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <button class="bag-btn" onclick="cartQuantity++; document.querySelector('#cartSummary').innerText=`Your bag has ${cartQuantity} items`;"  >Add to Bag</button>
+        <button class="wish-btn" onclick="cartQuantity--; document.querySelector('#cartSummary').innerText=`Your bag has ${cartQuantity} items`;" >Move to Wishlist</button>
+        <button class="bag-btn" onclick="cartQuantity+=2; document.querySelector('#cartSummary').innerText=`Your bag has ${cartQuantity} items`;" >Add 1+1 sale items</button>
+        </main>
+        <h1 id="cartSummary"></h1>
+        <br><br><br><br>
+        <p style="font-size: 25px;">3 button liya gaya hai. <br>Add to bag par click karne par cartQuantity 1 se increase ho jati hai. <br> Move to wishlist par click karne par cartQuantity decrease ho jati hai. <br>Add 1+1 sale items par click karne par cartQuantity 2 increase ho jati hai. <br>cartQunatity naam ke variable ko 0 se initialize kiya gaya hai. <br> onclick event ke andar cartQuantity variable ko update kiya gaya hai aur uska value display element me show kiya gaya hai.</p>
+        <script>
+            let cartQuantity=0;
+            document.querySelector('#cartSummary').innerText=`Your bag has ${cartQuantity} items`;
+
+        </script>
+</body>
+</html>

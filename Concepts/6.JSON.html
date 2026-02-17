@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JSON Local storage Date and DOM</title>
+</head>
+<body>
+    <div class="my-div">This is a div</div>
+
+
+    <script>
+        // Object vs JSON: when we go out of our program boundary then JSON is send.
+/*          let product={
+            name: 'Jeans',
+            price: 599,
+            rating: {
+                stars:4.8,
+                noOfReviews: 946,
+            }
+        }
+        console.log(typeof product);
+        console.log(product);               //  Key inside an object are variables.
+        
+        let str=JSON.stringify(product);    // object has been converted to string(=JSON). easy to send on internet.
+        console.log(typeof str);            // Now type of str is string.
+        console.log(str);                   // in JSON key becomes string.
+
+        let newProduct = JSON.parse(str);   // JSON converted to object again.
+        console.log(typeof newProduct);
+        console.log(newProduct);  */           // here key will become variables again.
+
+
+        // To store data in local storage- data saved in the browser's local storage, which is specific to the web domain (URL) that the page is on.
+        // localStarage is an object, after dot a funtion. Called method. 
+/*      localStorage.setItem ('Name', 'mathsindeep');   // Name is key and mathsindeep is its value.
+        localStorage.setItem('Price', '999');
+        localStorage.setItem('Age', '2');               // data is at: inspect-> application -> Local storage -> server , in alphabetical order.
+        console.log(localStorage.getItem('Name')); */   // To access the data from local storage.   
+
+        // To store object in local storage.
+/*         let product={
+            name: 'Jeans',
+            price: 599,
+            rating: {
+                stars:4.8,
+                noOfReviews: 946,
+            }
+        }
+        localStorage.setItem('product' , product);
+        console.log(localStorage.getItem('product'));
+        localStorage.setItem('product2' , JSON.stringify(product));     // object converted to string=JSON and stored in product2.
+        console.log(localStorage.getItem('product2')); */
+
+        // To remove data from local storage.
+/*      localStorage.removeItem('product');             // Erage only one data in local storage.
+        localStorage.clear();  */                       // Erage all data in local storage.
+
+
+        // new Date object and methods related to this object.
+/*         let myDate= new Date();                  // inbuilt object new Date is assignd=ed to myDate.
+        console.log(myDate);
+        console.log(typeof new Date());
+        console.log(typeof myDate);
+        console.log(myDate.getTime());
+        console.log(myDate.getDay());
+        console.log(myDate.getFullYear());
+        console.log(myDate.getHours());
+        console.log(myDate.getMinutes());
+        console.log(myDate.getSeconds());
+        console.log(myDate.getMilliseconds()); */
+
+
+        // DOM-document object model manupulation.
+        // To know the details of document.
+/*      console.log(document.location);
+        console.log(document.title);
+        document.title='Change title from JSON Local storage Date and DOM';
+        console.log(document.title);
+        console.log(document.domain); */
+
+        // To add and remove class to an exsisting html element.
+/*      document.querySelector('.my-div').classList.add('my-div2', 'my-div3');
+        console.log(document.querySelector('.my-div').classList);
+        document.querySelector('.my-div2').classList.remove('my-div');
+        console.log(document.querySelector('.my-div3').classList); */
+
+        // To create html element, to append it to another html element..
+/*      let myButton=document.createElement('button');                  // in myButton variable, button html element has been saved.
+        myButton.innerText= 'Click me';                                 // inner hatml of the button changed.
+        document.querySelector('.my-div').appendChild(myButton);        // myButton has been added to an html element with class my-div.
+        document.querySelector('.my-div').removeChild(myButton); */     // myButton element has been removed. 
+        
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Cricket Game-9</title>
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- To maintain the score of game after refresh -->
+    <h1>Bat Ball Stump Game</h1>
+    <button onclick="
+    let computerChoice=generateComputerChoice();
+    let resultMsg=getResult('Bat', computerChoice);
+    showResult('Bat' , computerChoice , resultMsg);
+    ">Bat</button>
+    
+    <button onclick="
+    computerChoice=generateComputerChoice();
+    resultMsg=getResult('Ball', computerChoice);
+    showResult('Ball' , computerChoice , resultMsg);
+    ">Ball</button>
+    
+    <button onclick="
+    computerChoice=generateComputerChoice();
+    resultMsg=getResult('Stump', computerChoice);
+    showResult('Stump' , computerChoice , resultMsg);
+    ">Stump</button>
+
+    <button onclick="localStorage.clear();
+    resetScore();
+    ">Reset</button>
+    
+    <script>
+        let scoreStr= localStorage.getItem('score');
+        let score;
+        resetScore(scoreStr);
+
+        function resetScore (scoreStr){
+            score= scoreStr? JSON.parse(scoreStr): {
+                    win:0,
+                    lost:0,
+                    tie:0,
+                };
+                score.showScore= function () {
+                return `Win: ${score.win}, Lost: ${score.lost}, Tie: ${score.tie}`;        
+                }
+        }
+
+        // if (scoreStr!==undefined){
+        //     score=JSON.parse(scoreStr);
+        // } else {
+        //     score ={
+        //             win:0,
+        //             lost:0,
+        //             tie:0,
+        //         };
+        //     }
+        function generateComputerChoice () {
+            let randomNumber = Math.random() * 3;
+            if (randomNumber<=1) {
+                return 'Bat';
+            } else if (randomNumber <=2) {
+                return 'Ball';
+            } else {
+                return 'Stump';
+            }
+        }
+
+        function getResult (userMove, ComputerMove) {
+            if (userMove==='Bat'){
+                if (ComputerMove==='Bat') {
+                    score.tie++;
+                    return 'Its a tie.';
+                } else if (ComputerMove==='Ball') {
+                    score.win++;
+                    return 'User won.';
+                } else if (ComputerMove==='Stump') {
+                    score.lost++; 
+                    return 'Computer won.';
+                }
+            } else if (userMove==='Ball') {
+                if (ComputerMove==='Bat') {
+                    score.lost++;
+                    return 'Computer won.';
+                } else if (ComputerMove==='Ball') {
+                    score.tie++;
+                    return 'Its a tie.';
+                } else if (ComputerMove==='Stump') {
+                    score.win++; 
+                    return 'User won.';
+                }
+            } else {
+                if (ComputerMove==='Bat') {
+                    score.win++;
+                    return 'User won.';
+                } else if (ComputerMove==='Ball') {
+                    score.lost++;
+                    return 'Computer won.';
+                } else if (ComputerMove==='Stump') {
+                    score.tie++; 
+                    return 'Its a tie.';
+                }
+            }
+        }
+        function showResult (userMove, ComputerMove, resultMsg) { 
+            localStorage.setItem('score', JSON.stringify(score));
+            alert(`You have choosen ${userMove}. Computer has choosen ${ComputerMove}. 
+            ${resultMsg}.
+            ${score.showScore()}`);
+        }       
+    </script>
+</body>
+</html>

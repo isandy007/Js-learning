@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Loop</title>
+  </head>
+  <body>
+    <script>
+    // While loop: jab tak cond satisfy hogi tab tak code run hoga. cond false hote hi compiler {} se bahar aa jayega.
+/*    let num = 0;                      //initialisation
+        while (num <= 4) {                // condition
+        console.log(num);
+        num = num + 1;                    // updating  
+      }
+      console.log(num);  */ // initialisation, condition, updating 3 place par likha jata hai to chhutne ka chance hota hai.
+
+
+    // Non-standard condition: yani loop kitni baar chalega pata nahi hai. Above was standard condtion.
+/*      let mynum=0;
+        while(mynum<1){
+          console.log(mynum);
+          mynum=Math.random()*2;            //mynum will be assigned a random value.
+      }
+      console.log(mynum);  */ // last assigned value to mynum wich is >=1.
+
+
+    // do-while loop: isme ek bar code run hona must hai, kyonki yaha pahle code chalta hai fir cond check hoti hai.
+/*    let num = 0;                          //initialisation
+      do {
+        console.log(num);                   // this line will run for sure.
+        num++;                              // updating
+      } 
+      while (num < 5);                      // condition - jab tak ye satisfy hoga do wala code run karega. 
+      console.log(`when compilerr comes out of loop then num is ${num}`);  */  // initialisation, condition, updating 3 place par likha jata hai to chhutne ka chance hota hai.
+
+
+    // For loop: initial value, condition, updating at one place. No chance of mistake now.
+/*    for (let num=0; num<5; num++){
+          console.log(num);
+      } */
+
+
+    // To print all the elements of an array if no of elements are known.
+/*    let nums=[2,7,-54,35,0,7,1];
+      for(let index=0; index<=6; index++){      
+          console.log(nums[index]);
+      } */
+
+
+    // To sum the array elements in no of elements unknown. Called accumulator pattern.
+/*    let nums=[2,4,5,9,-7];
+      let sum=0;
+      for(let i=0; i<nums.length; i++){         // .length is a method which gives the no of elements in a array.
+          sum+=nums[i];
+      }
+      console.log(`Sum of elements=${sum}.`); */
+
+
+    // To squae the array elements.
+/*  let nums=[2,4,5,9,-7];  
+    let numsSquare=[];
+      for(let i=0; i<nums.length; i++){
+          numsSquare.push(nums[i]*nums[i]); //line 62 and 63 are same. anyone can be written.
+          numsSquare[i]=nums[i]*nums[i];
+      }
+      console.log(numsSquare); */
+
+
+    // Break: when a cond is met, compiler comes out of the loop.
+/*      for(let i=0; i<=10; i++){
+          console.log(i);   
+          if(i==2){                 
+              break;                // when i will become 4 then for loop will be ended.
+          }
+      } */
+
+
+    // To find a particular no in array.
+/*    let myArray=[1,5,3,7,9,4,8,0,3];
+      for(let i=0; i<myArray.length; i++){
+          if(myArray[i]==9){
+              console.log(`9 is present at index ${i}`);    //when i will be 4 then this will run and the break will be encountered, loop ended.
+              break;
+          }
+          console.log('Still searching');       // if 1st element were 9 then this will not run.
+      } */
+
+
+    // Continue: To print odd no <=10.
+/*      for(let i=1; i<=10; i++){
+            if(i%2==0){                 // if i is even then continue will be encountered means aftre this again updating and checkig will start.
+                continue;
+            }
+        console.log(i);
+        } */
+    </script>
+  </body>
+</html>

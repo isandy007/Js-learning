@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Cricket Game-2</title>
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Function with parameter and return value -->
+    <h1>Bat Ball Stump Game</h1>
+    <button onclick="
+    let computerChoice=generateComputerChoice();        // We call the generateComputerChoice function to get the computer's choice and store it in the computerChoice variable. We then call the getResult function with the user's move ('Bat') and the computer's move (computerChoice) to get the result message, which we store in the resultMsg variable. Finally, we call the showResult function with the user's move ('Bat'), the computer's move (computerChoice), and the result message (resultMsg) to display the result of the game in an alert box.
+    let resultMsg=getResult('Bat', computerChoice);
+    showResult('Bat' , computerChoice , resultMsg);
+    ">Bat</button>
+    
+    <button onclick="
+    computerChoice=generateComputerChoice();
+    resultMsg=getResult('Ball', computerChoice);
+    showResult('Ball' , computerChoice , resultMsg);
+    ">Ball</button>
+    
+    <button onclick="
+    computerChoice=generateComputerChoice();
+    resultMsg=getResult('Stump', computerChoice);
+    showResult('Stump' , computerChoice , resultMsg);
+    ">Stump</button>
+
+    <script>
+        function generateComputerChoice () {            // Math.random() generates a random number between 0 and 1. We multiply it by 3 to get a number between 0 and 3. We then use if-else statements to determine the computer's choice based on the value of randomNumber
+            let randomNumber = Math.random() * 3;
+            if (randomNumber<=1) {
+                return 'Bat';
+            } else if (randomNumber <=2) {
+                return 'Ball';
+            } else {
+                return 'Stump';
+            }
+        }
+
+        function getResult (userMove, ComputerMove) {   // This function takes the user's move and the computer's move as parameters and returns the result of the game. We use if-else statements to compare the user's move with the computer's move and determine the winner.
+            if (userMove==='Bat'){
+                if (ComputerMove==='Bat') {
+                    return 'Its a tie.';
+                } else if (ComputerMove==='Ball') {
+                    return 'User won.';
+                } else if (ComputerMove==='Stump') { 
+                    return 'Computer won.';
+                }
+            } else if (userMove==='Ball') {
+                if (ComputerMove==='Bat') {
+                    return 'Computer won.';
+                } else if (ComputerMove==='Ball') {
+                    return 'Its a tie.';
+                } else if (ComputerMove==='Stump') { 
+                    return 'User won.';
+                }
+            } else {
+                if (ComputerMove==='Bat') {
+                    return 'User won.';
+                } else if (ComputerMove==='Ball') {
+                    return 'Computer won.';
+                } else if (ComputerMove==='Stump') { 
+                    return 'Its a tie.';
+                }
+            }
+        }
+        function showResult (userMove, ComputerMove, resultMsg) {           // This function takes the user's move, the computer's move, and the result message as parameters and displays the result of the game in an alert box. We use template literals to create a message that includes the user's move, the computer's move, and the result of the game.
+            alert(`You have choosen ${userMove}. Computer has choosen ${ComputerMove}. ${resultMsg}.`);
+        }
+                
+    </script>
+</body>
+</html>

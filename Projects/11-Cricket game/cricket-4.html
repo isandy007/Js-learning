@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Cricket Game-2</title>
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Function without return value ki madad se computerChoice ko decide kiya gaya hai -->
+    <h1>Bat Ball Stump Game</h1>
+    <button onclick="
+    generateComputerChoice();           // Computer choice generate karne ke baad computerChoice ke basis par resultMsg ko assign kiya gaya hai.
+    let resultMsg;
+    if (computerChoice==='Bat') {
+        resultMsg='Its a tie.';
+    } else if (computerChoice==='Ball') {
+        resultMsg='You won.';
+    } else if (computerChoice==='Stump') { 
+        resultMsg='Computer won.';
+    }
+    alert(`You have choosen Bat. Computer has choosen ${computerChoice} and ${resultMsg}`);
+    ">Bat</button>
+    
+    <button onclick="
+    generateComputerChoice();
+    if (computerChoice==='Bat') {
+        resultMsg='Computer won.';
+    } else if (computerChoice==='Ball') {
+        resultMsg='Its a tie.';
+    } else if (computerChoice==='Stump') { 
+        resultMsg='You won.';
+    }
+    alert(`You have choosen Ball. Computer has choosen ${computerChoice} and ${resultMsg}`);
+    ">Ball</button>
+
+    <button onclick="
+    generateComputerChoice();
+    if (computerChoice==='Bat') {
+        resultMsg='You won.';
+    } else if (computerChoice==='Ball') {
+        resultMsg='Computer won.';
+    } else if (computerChoice==='Stump') { 
+        resultMsg='Its a tie.';
+    }
+    alert(`You have choosen Stump. Computer has choosen ${computerChoice} and ${resultMsg}`);
+    ">Stump</button>
+
+    <script>
+        let computerChoice;
+        function generateComputerChoice () {        // Computer choice ko generate karne ke liye random number generate kiya gaya hai aur uske basis par computerChoice ko assign kiya gaya hai.
+            let randomNumber = Math.random() * 3;
+            if (randomNumber<=1) {
+                computerChoice='Bat';
+            } else if (randomNumber <=2) {
+                computerChoice='Ball';
+            } else {
+                computerChoice='Stump';
+            }
+        }
+    </script>
+</body>
+</html>

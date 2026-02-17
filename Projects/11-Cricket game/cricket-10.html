@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Cricket Game-10 </title>
+    <style>
+        *{
+            margin: 0; padding: 0; box-sizing: border-box;
+        }
+        body{
+            text-align: center;
+        }
+        .main-div{
+            display: flex;
+            flex-direction: column; 
+            justify-content: start; 
+            align-items: center;             
+            border: 2px solid rgb(255, 134, 134);
+            background-color: rgb(1, 131, 1);
+            width: 50%;
+            height: 100vh;            
+        }
+        h1{
+            color: white;
+            margin: 5px;
+        }
+        h4{
+            color: white;
+            margin: 10px;
+        }
+        .user-move, .computer-move, .result, .score {
+            color: rgb(255, 230, 0);
+            margin: 10px;
+        }
+        .score-div{
+            background-color: rgb(0, 77, 0);
+            width: 60%;
+            justify-self: center;
+            border-radius: 10px;
+            margin: 10px;
+        }
+        .choice-button{
+            width: 90px;
+            height: 100px;
+            background-color: rgb(163, 250, 160);
+            border: none;
+            border-radius: 10px;
+        }
+        .choice-image{
+            height: 60%;
+        }
+        p{
+            text-align: left;
+            font-size: 20px;
+            color: rgb(0, 52, 149);
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-div">
+    <!-- To maintain the score of game after refresh -->
+    <h1>Bat Ball Stump Game</h1>
+    <div class="play-buttons">
+    <button class="choice-button" onclick="
+    let computerChoice=generateComputerChoice();
+    let resultMsg=getResult('Bat', computerChoice);
+    showResult('Bat' , computerChoice , resultMsg);
+    "> <img class="choice-image" src="Images/Bat.png" alt="Bat image"></button>
+    
+    <button class="choice-button" onclick="
+    computerChoice=generateComputerChoice();
+    resultMsg=getResult('Ball', computerChoice);
+    showResult('Ball' , computerChoice , resultMsg);
+    "><img class="choice-image" src="Images/Ball.png" alt="Ball image"></button>
+    
+    <button class="choice-button" onclick="
+    computerChoice=generateComputerChoice();
+    resultMsg=getResult('Stump', computerChoice);
+    showResult('Stump' , computerChoice , resultMsg);
+    "><img class="choice-image" src="Images/Stump.png" alt="Stump image"></button>
+    </div>
+    <div class="score-div">
+        <h4>The user has choosen: </h4> <div class="user-move"></div> 
+        <h4>Computer has choosen: </h4> <div class="computer-move"></div> 
+        <h4>Result of the game: </h4> <div class="result"></div> 
+        <h4>Score of the game: </h4> <div class="score"></div>
+    </div>
+    <button onclick="localStorage.clear();
+    resetScore();
+    ">Reset</button>
+    </div>
+    
+    <script>
+        let scoreStr= localStorage.getItem('score');
+        let score;
+        resetScore(scoreStr);
+
+        function resetScore (scoreStr){
+            score= scoreStr? JSON.parse(scoreStr): {
+                    win:0,
+                    lost:0,
+                    tie:0,
+                };
+                score.showScore= function () {
+                return `Win: ${score.win}, Lost: ${score.lost}, Tie: ${score.tie}`;        
+                }
+                showResult();
+        }
+        // if (scoreStr!==undefined){
+        //     score=JSON.parse(scoreStr);
+        // } else {
+        //     score ={
+        //             win:0,
+        //             lost:0,
+        //             tie:0,
+        //         };
+        //     }
+        function generateComputerChoice () {
+            let randomNumber = Math.random() * 3;
+            if (randomNumber<=1) {
+                return 'Bat';
+            } else if (randomNumber <=2) {
+                return 'Ball';
+            } else {
+                return 'Stump';
+            }
+        }
+
+        function getResult (userMove, ComputerMove) {
+            if (userMove==='Bat'){
+                if (ComputerMove==='Bat') {
+                    score.tie++;
+                    return 'Its a tie.';
+                } else if (ComputerMove==='Ball') {
+                    score.win++;
+                    return 'User won.';
+                } else if (ComputerMove==='Stump') {
+                    score.lost++; 
+                    return 'Computer won.';
+                }
+            } else if (userMove==='Ball') {
+                if (ComputerMove==='Bat') {
+                    score.lost++;
+                    return 'Computer won.';
+                } else if (ComputerMove==='Ball') {
+                    score.tie++;
+                    return 'Its a tie.';
+                } else if (ComputerMove==='Stump') {
+                    score.win++; 
+                    return 'User won.';
+                }
+            } else {
+                if (ComputerMove==='Bat') {
+                    score.win++;
+                    return 'User won.';
+                } else if (ComputerMove==='Ball') {
+                    score.lost++;
+                    return 'Computer won.';
+                } else if (ComputerMove==='Stump') {
+                    score.tie++;
+                    return 'Its a tie.';
+                }
+            }
+        }
+        function showResult (userMove, ComputerMove, resultMsg) { 
+            localStorage.setItem('score', JSON.stringify(score));
+            document.querySelector('.user-move').innerHTML= userMove ?`${userMove}`:'';
+            document.querySelector('.computer-move').innerHTML= ComputerMove?`${ComputerMove}`:'';
+            document.querySelector('.result').innerHTML= resultMsg? `${resultMsg}`:'';
+            document.querySelector('.score').innerHTML= `${score.showScore()}`;
+        }
+        // Flow of codes on page load? 1.   scoreStr is assigned with value of localStorage.getItem('score') 2. resetScore(scoreStr) is called and score is assigned with value of JSON.parse(scoreStr) if scoreStr is not null or undefined otherwise it is assigned with default value. 3. showResult() is called to show the score on page load. 4. When user clicks on any button, computerChoice is assigned with value of generateComputerChoice() and resultMsg is assigned with value of getResult() and then showResult() is called to show the result of game and score. 5. When user clicks on reset button, localStorage.clear() is called to clear the local storage and resetScore() is called to reset the score variable and then showResult() is called to show the reset score.  
+
+    </script>
+</body>
+</html>

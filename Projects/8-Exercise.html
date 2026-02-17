@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Exercise-4</title>
+    <style>
+        #btn{
+           height: 100px; 
+           width: 500px;
+           font-size: 20px;
+           color: yellow;
+           background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <!-- Good morning and afternoon based on time -->
+    <button id="btn" onclick="
+    console.log(alert(wishUser('Modi ji')));        // Here we are passing the name of user as an argument to the function and it will return the wish according to the time of day. If we do not pass any name then it will take default value as 'Dear'.
+    ">Click me to wish!</button>
+
+     <script>
+        function wishUser(userName='Dear'){         // Here we are using default parameter to assign a default value to the userName parameter. If we do not pass any value to the userName parameter then it will take the default value as 'Dear'.
+            let clickTime=new Date();               // Here we are creating a new Date object to get the current time. The getHours() method will return the current hour in 24-hour format (0-23). Based on the hour, we will return the appropriate wish to the user.
+            if(clickTime.getHours()<=12 && clickTime.getHours()>=6) {
+            return `I wish u a very happy Good Morning ${userName}`;
+            } else if (clickTime.getHours()<=18){
+                return `I wish u a very happy Good Evening ${userName}`;
+            } else {
+               return `I wish u a very happy Good Night ${userName}`;
+            }
+        }
+     </script>
+</body>
+</html>

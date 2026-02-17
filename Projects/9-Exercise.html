@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Exercise-4.0</title>
+    <style>
+        #btn{
+           height: 100px; 
+           width: 500px;
+           font-size: 20px;
+           color: yellow;
+           background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <!-- Button with click counts and colour change and servive on refresh and close of browser -->
+     <button id="btn" onclick="
+     clickCounts=localStorage.getItem('clickCounts');
+     clickCounts++;
+     btnColor(clickCounts);
+     document.querySelector('#btn').innerHTML=`I have been clicked: ${clickCounts} times.`;
+     ">Clcik me:</button>
+
+     <script>
+        let clickCounts=localStorage.getItem('clickCounts');    //get the click counts from local storage
+            clickCounts=clickCounts? clickCounts:0;             //if clickCounts is not null then assign it to clickCounts else assign 0.
+        function btnColor (clickCounts) {                       // function to change the button color based on the clickCounts.
+            localStorage.setItem('clickCounts', clickCounts);       //set the click counts in local storage.
+            document.querySelector('#btn').innerHTML=`I have been clicked: ${clickCounts} times.`;   //update the button text with the clickCounts.
+            if (clickCounts%2===0){
+                document.getElementById("btn").style.backgroundColor="green";
+            } else {
+                document.getElementById("btn").style.backgroundColor="blue";
+            }
+        }
+     </script>
+</body>
+</html>

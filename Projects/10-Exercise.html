@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Exercise-4</title>
+    <style>
+        #btn{
+           height: 100px; 
+           width: 100px;
+           font-size: 20px;
+           border: none;
+           border-radius: 10px;
+        }
+        .js-even{
+            background-color: aqua;
+        }
+        .js-odd{
+            background-color: rgb(255, 190, 92);
+        }
+    </style>
+</head>
+<body>
+    <!-- Button with click counts and colour change and servive on refresh and close of browser -->
+    <button id="btn" onclick="clickCounts()">0</button>
+
+    <script>
+        let clicks=localStorage.getItem('clicks') || 0;     // Get the clicks count from localStorage or initialize to 0 if not present.
+        function clickCounts() {
+            clicks++;                                       
+            localStorage.setItem('clicks', clicks);         // Update the clicks count in localStorage.
+            updateButton();
+        }
+
+        function updateButton() {
+            let button=document.querySelector('#btn');      // Get the button element. 
+            button.innerText=clicks;                        // Update the button text to show the current click count.   
+            if(clicks%2==0){
+                button.classList.add('js-even');        // If the click count is even, add the 'js-even' class and remove the 'js-odd' class.
+                button.classList.remove('js-odd');
+            }else{
+                button.classList.add('js-odd');
+                button.classList.remove('js-even');
+            }
+        }
+        updateButton();
+        // flow of the code line by line with line numbers: 
+        // 1. The code starts by retrieving the click count from localStorage using `localStorage.getItem('clicks')`. If there is no value stored, it initializes the click count to 0.
+        // 2. The `clickCounts` function is defined, which increments the click count and updates the localStorage with the new count. It then calls the `updateButton` function to update the button's appearance and text.
+        // 3. The `updateButton` function retrieves the button element and updates its text to display the current click count. It checks if the click count is even or odd and updates the button's class accordingly to change its background color.
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Object</title>
+  </head>
+  <body>
+    <p></p>
+    <script>
+      // Object insides: Inside an object there can be- key: value pairs, object, function etc.
+      /*      let product = {
+        company: "Apple",
+        price: 599,
+        item_name: "T-shirt",
+        rating: {                           // Object inside the opbject product.
+          stars: 4.5,
+          totalReviews: 543,
+        },
+        displayPrice: function () {         // Function inside the object. displayPrice is function name.
+          console.log(`Price of the product is ₹ ${product.price}.`);
+        },
+      };
+      product.displayPrice();               // Caling of function.
+      console.log(product); */
+
+      // Autoboxing: when a dot is placed after a premitive (numbers, strings) then it becomes an object and a lot of methods can be applied on premitives
+      /*    console.log('MathsInDeep Classes'.length);
+      console.log('273581936'.length);
+      console.log('Mathsindeep classess'.replace('Mathsindeep', 'MinD'));
+      console.log('Mathsindeep classes'.toUpperCase()); */
+
+      // Object references: For normal variable x =y means value of x is assigned to y. For objects x=ob1 means the reference of ob1 is assigned to x.
+      /*    let a=5;
+      let b=a;                              // value of a will be assined to b.
+      console.log(`a=${a} and b=${b}`);
+      console.log(a===b);
+      a=7;
+      console.log(`a=${a} and b=${b}`);     //a is changed, b remains same.
+      
+      let x={ prop: 'testing'};
+      let y=x;                             // the address or reference of object x will be assigned to y.
+      console.log(`x=${x.prop} and y=${y.prop}`);
+      x.prop='tested';                    // chnage is done in x but y will also be updated.
+      console.log(`x=${x.prop} and y=${y.prop}`);
+      console.log(x===y); */
+
+      /*    let p={prop: 'hello'};
+      let q={prop: 'hello'};
+      console.log(p==q);                  // p and q stores the memory addresses so unequal.
+      console.log(p===q); */
+
+      // Destructuring: To access the object properties.
+      /*      let product = {
+        company: 'Apple',
+        price: 599,
+        item_name: 'T-shirt',
+      };
+      let companyName=product.company;
+      console.log(companyName);
+      let company1=product.company;
+      console.log(company1);
+
+      let company2=product.company;
+      let price2=product.price;
+      console.log(company2);
+      console.log(price2);
+
+      let {company,price}=product;  // Name inside {} should exactly match with the key.
+      console.log(company);
+      console.log(price);
+
+      let {comapnyName}=product;  // companyName not exactly matching with any key.
+      console.log(comapnyName); */
+
+      // How to check two objects are equal or not.
+      /*       let price=899;
+        let product = {
+        company: 'Apple',
+        price: price,
+        item_name: 'T-shirt',
+      };
+
+      let product1 = {
+        company: 'Apple',
+        price,
+        item_name: 'T-shirt',
+      };
+      console.log(product);
+      console.log(product1);
+      console.log(product===product1);  */ // false => both are different.
+
+/*       let product = {
+        company: "Apple",
+        price: 599,
+        displayPrice: function () {
+          console.log(`${this.price}`); // this means the same object =product.
+        },
+      };
+      product.displayPrice();           // object.function is called method. As math.random(), math.round() etc
+
+      let product1 = {
+        company: "Apple",
+        price: 600,
+        displayPrice() {                // function key word ignored. But discouraged to use.
+          console.log(`${this.price}`);
+        },
+      };
+      product1.displayPrice(); */
+      
+    </script>
+  </body>
+</html>

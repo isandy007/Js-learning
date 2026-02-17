@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Exercise-4</title>
+    <style>
+        #btn{
+           height: 100px; 
+           width: 500px;
+           font-size: 20px;
+           color: yellow;
+           background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <!-- Good morning and afternoon based on time -->
+    <h2 id="greeting">Greeting message!</h2>
+
+     <script>
+        function doGreeting(personName='Dear'){         
+            let date=new Date();                                // get the current date and time.
+            let hours=date.getHours();                          // get the current hour (0-23) from the date object.
+            let heading=document.querySelector('#greeting');    // select the HTML element with the id "greeting" and assign it to the variable "heading".
+            if (hours>=5 && hours<=12){
+                heading.innerHTML=`A very happy Good Morning ${personName}.`;
+            } else if  (hours<=18){
+                heading.innerHTML=`A very happy Good Evening ${personName}.`;
+            } else {
+                heading.innerHTML=`A very happy Good Night ${personName}.`;
+            }
+        }
+        doGreeting('master GOGO');                          // Call the function "doGreeting" with the argument 'master GOGO', which will display a personalized greeting message based on the current time of day.
+     </script>
+</body>
+</html>

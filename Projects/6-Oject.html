@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Object comparission</title>
+</head>
+<body>
+    
+    <script>
+        // Two objects are identical if they have same properties and values. 
+        let userA={
+            name: 'modi',
+            age: 100,
+            blood: 'B+ve',
+        };
+        let userB={
+            name: 'modi',
+            age: 100,
+            blood: 'B+ve',
+        };
+        let userC={
+            name: 'rahul',
+            age: 100,
+            blood: 'B+ve',
+        }; 
+        // Function to check if two objects are identical or not
+        function isIdenticalUsers(user1, user2){
+            if(typeof user1!=='object' || typeof user2!=='object'){         // Check if the parameters passed are objects or not
+                console.warn('The parameters passed are not objects');
+                return false;
+            }
+            if (user1==user2){                              // Check if the two objects are same reference or not
+                return true;
+            }
+            if(user1.name==user2.name && user1.age==user2.age && user1.blood==user2.blood){                                     // Check if the properties and values of the two objects are same or not
+                    return true;
+                } else {
+                    return false;
+                }
+        };
+        console.log(isIdenticalUsers(userA, userB));
+        console.log(isIdenticalUsers(userA, 'userB'));
+        console.log(isIdenticalUsers(userA, userA));
+        console.log(isIdenticalUsers(userC, userB));
+        console.log(isIdenticalUsers(userB, userC));
+    </script>
+</body>
+</html>
