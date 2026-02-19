@@ -5,7 +5,7 @@
 </head>
 <body>
 
-
+    <button id="my-button">Click me</button>
 
     <script>
         // Basic way to declare a function. function keyword followed by the name of the function and parentheses. Inside the parentheses, we can define parameters that the function can take. The body of the function is enclosed in curly braces.
@@ -90,9 +90,15 @@
 
 
         // setInterval: A built-in function in JavaScript that allows us to execute a function repeatedly at specified intervals. It takes two arguments: the function to be executed and the interval in milliseconds.
-        let alarm = () => console.log(`Wake up! ${new Date()}`);  // We can call the setInterval function and pass the alarm function as an argument. The alarm function will be executed every 3000 milliseconds (3 seconds). The new Date().toLocaleTimeString() will log the current time when the alarm function is executed.
+        /* let alarm = () => console.log(`Wake up! ${new Date()}`);  // We can call the setInterval function and pass the alarm function as an argument. The alarm function will be executed every 3000 milliseconds (3 seconds). The new Date().toLocaleTimeString() will log the current time when the alarm function is executed.
         let intervalId = setInterval(alarm, 3000);         
-        setTimeout(() => clearInterval(intervalId), 12000);         // We can call the setInterval function and store the identifier of the interval in a variable. The alarm function will be executed every 3000 milliseconds (3 seconds). We can also use setTimeout to clear the interval after a certain amount of time (in this case, 10000 milliseconds or 10 seconds).
+        setTimeout(() => clearInterval(intervalId), 12000); */         // We can call the setInterval function and store the identifier of the interval in a variable. The alarm function will be executed every 3000 milliseconds (3 seconds). We can also use setTimeout to clear the interval after a certain amount of time (in this case, 10000 milliseconds or 10 seconds).
+
+        // Event listeners: A way to execute a function in response to an event, such as a user clicking a button or submitting a form. We can use the addEventListener method to attach an event listener to an element and specify the function to be executed when the event occurs.
+        let buttonElement = document.getElementById("my-button");  // We can get a reference to the button element using document.getElementById and store it in a variable.
+        buttonElement.addEventListener("click", () => {             // We can call the addEventListener method on the button element and pass the event type ("click") and a function to be executed when the event occurs. In this case, we are using an arrow function to log a message to the console when the button is clicked.
+            console.log("Button clicked!");
+        });
 
     </script>
     
