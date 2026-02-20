@@ -95,10 +95,20 @@
         setTimeout(() => clearInterval(intervalId), 12000); */         // We can call the setInterval function and store the identifier of the interval in a variable. The alarm function will be executed every 3000 milliseconds (3 seconds). We can also use setTimeout to clear the interval after a certain amount of time (in this case, 10000 milliseconds or 10 seconds).
 
         // Event listeners: A way to execute a function in response to an event, such as a user clicking a button or submitting a form. We can use the addEventListener method to attach an event listener to an element and specify the function to be executed when the event occurs.
-        let buttonElement = document.getElementById("my-button");  // We can get a reference to the button element using document.getElementById and store it in a variable.
+        /* let buttonElement = document.getElementById("my-button");  // We can get a reference to the button element using document.getElementById and store it in a variable.
         buttonElement.addEventListener("click", () => {             // We can call the addEventListener method on the button element and pass the event type ("click") and a function to be executed when the event occurs. In this case, we are using an arrow function to log a message to the console when the button is clicked.
-            console.log("Button clicked!");
-        });
+            alert("Button clicked!");
+        }); */
+
+        /* let behaviour = () => console.log('button clicked!');
+        let buttonElement = document.getElementById("my-button");
+        buttonElement.addEventListener("click", behaviour);
+        let printDate = () => console.log(new Date());
+        buttonElement.addEventListener("click", printDate); */
+
+        let buttonElement = document.getElementById("my-button");
+        buttonElement.addEventListener("focus", () => console.log("Focused"));
+        buttonElement.addEventListener("blur", () => console.log("Blurred"));
 
     </script>
     

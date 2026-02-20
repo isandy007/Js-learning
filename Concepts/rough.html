@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listeners</title>
+</head>
+<body>
+    <button>Click me</button>
+    <div class="box" style="width: 100px; height: 100px; background-color: lightblue;">A div taken</div>
+    <input type="text" placeholder="Type something...">
+    <form style="border: 2px solid black; height: 100px;">
+        <input type="text" placeholder="Username">
+        <input type="password" placeholder="Password">
+        <button type="submit">Submit</button>
+    </form>
+    <video src="video.mp4" controls></video>
+
+    <script>
+        const btn = document.querySelector("button");
+        const box = document.querySelector(".box");
+        const input = document.querySelector("input");
+        const form = document.querySelector("form");
+        const video = document.querySelector("video");
+
+        /* btn.addEventListener("click", () => {
+            alert("Clicked!");
+        }); */
+
+        /* box.addEventListener("dblclick", () => {
+            console.log("Double clicked");
+        }); */
+
+        /* box.addEventListener("mousedown", () => console.log("Mouse Down"));
+        box.addEventListener("mouseup", () => console.log("Mouse Up")); */
+
+        /* box.addEventListener("mousemove", () => console.log("Moving")); */
+
+        /* box.addEventListener("mouseenter", () => console.log("Entered"));
+        box.addEventListener("mouseleave", () => console.log("Left")); */
+
+        /* box.addEventListener("mouseover", () => console.log("Over"));
+        box.addEventListener("mouseout", () => console.log("Out")); */
+
+        /* box.addEventListener("contextmenu", (e) => {
+            e.preventDefault();
+            alert("Right click disabled");
+}       ); */
+
+        /* box.addEventListener("wheel", () => console.log("Scrolling wheel")); */
+
+        /* document.addEventListener("keydown", (e) => {
+            console.log("Key Down:", e.key);
+        });
+
+        document.addEventListener("keyup", (e) => {
+            console.log("Key Up:", e.key);
+        }); */
+
+        /* form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            alert("Form Submitted");
+        }); */
+
+        /* form.addEventListener("reset", () => {
+            alert("Form Reset");
+        }); */
+
+        /* input.addEventListener("change", () => {
+        console.log("Changed:", input.value);
+        }); */
+
+        /* input.addEventListener("focus", () => console.log("Focused"));
+        input.addEventListener("blur", () => console.log("Blurred")); */
+
+        /* input.addEventListener("invalid", () => {
+            alert("Invalid input");
+        }); */
+
+        /* window.addEventListener("load", () => {
+        console.log("Page fully loaded");
+        console.log(new Date());
+        }); */
+
+        document.addEventListener("DOMContentLoaded", () => {
+            console.log("HTML loaded");
+            console.log(new Date());
+        });
+
+    </script>
+</body>
+</html>
