@@ -15,6 +15,7 @@
         <button type="submit">Submit</button>
     </form>
     <video src="video.mp4" controls></video>
+    <div style="height: 1000px;">big biv taken to get vertical slider to scroll.</div>
 
     <script>
         const btn = document.querySelector("button");
@@ -23,13 +24,17 @@
         const form = document.querySelector("form");
         const video = document.querySelector("video");
 
-        /* btn.addEventListener("click", () => {
-            alert("Clicked!");
-        }); */
+        // 1. Mouse Events
+        /* btn.addEventListener("click", () => {alert("Clicked!"); }); */
 
         /* box.addEventListener("dblclick", () => {
             console.log("Double clicked");
         }); */
+
+        /* element.addEventListener("eventName", function() {
+        // code here
+        }); */
+        
 
         /* box.addEventListener("mousedown", () => console.log("Mouse Down"));
         box.addEventListener("mouseup", () => console.log("Mouse Up")); */
@@ -45,7 +50,7 @@
         /* box.addEventListener("contextmenu", (e) => {
             e.preventDefault();
             alert("Right click disabled");
-}       ); */
+        }); */
 
         /* box.addEventListener("wheel", () => console.log("Scrolling wheel")); */
 
@@ -82,10 +87,10 @@
         console.log(new Date());
         }); */
 
-        document.addEventListener("DOMContentLoaded", () => {
+        /* document.addEventListener("DOMContentLoaded", () => {
             console.log("HTML loaded");
             console.log(new Date());
-        });
+        }); */
 
     </script>
 </body>
