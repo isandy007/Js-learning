@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise</title>
+    <style>
+        .my-button, .my-buttons {
+            font-size: 20px;
+            width: 200px;
+            height: 50px;
+            background-color: rgb(226, 64, 0);
+            border: none;
+            border-radius: 5px;
+            color: white;
+            margin-top: 10px;
+        }
+        .js-my-button {
+            font-size: 40px;
+            width: 400px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <button class="my-buttons" onclick="setTimeout(sizeDouble,3000)">Click me</button> <br>
+    <button class="my-button">doubled by add listener</button>
+
+    
+    <script>
+        // Create a variable multiply and assign a function to this variable that multiplies two numbers. Call this method from the variable.
+        /* let multiply= function(num1, num2){
+            return num1*num2;
+        }
+        console.log(multiply(4,7)); */                 // Output: 28    
+    
+        // Create a function runTwice that takes a function as a parameter and then runs that method twice.
+        /* let sum = (a, b) => console.log(a + b);
+        let runTwice = sumFunction => {
+            sumFunction (5, 4);
+            sumFunction (6, 7);
+        }
+        runTwice(sum);  */                      // Output: 9, 13
+
+        //Create a button which should grow double in size on clicking after 2 seconds.
+        /* function sizeDouble(){
+            document.querySelector('.my-buttons').classList.add('js-my-button');
+        }
+
+        let buttonElement = document.querySelector('.my-button');
+        buttonElement.addEventListener('click', event =>
+            setTimeout(sizeDouble2, 2000));
+        function sizeDouble2(){
+            let buttonElement = document.querySelector('.my-button');
+            buttonElement.classList.add('js-my-button');
+        } */
+
+        //Create a function that sums an array of numbers. Do this using a for-each loop.
+        /* let arr =[1, 2, 3, 4, 5];
+        let sum = 0;
+        arr.forEach(num => sum += num);
+        console.log(sum); */  // Output: 15
+
+        //Create a function that takes an array of numbers and return their squares using map function.
+        /* let arr = [1, 2, 3, 4, 5];
+        let squares = arr.map(num => num * num);
+        console.log(squares); */ // Output: [1, 4, 9, 16, 25]
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Switch statement</title>
+  </head>
+  <body>
+    <script>
+        // Switch statement: jab hume multiple conditions check karni hoti hai to switch statement use karte hai. Switch statement me expression ke value ke hisab se case execute hota hai. Agar koi case match nahi karta to default case execute hota hai. Break statement ka use karte hai taaki case ke baad ke code ko execute na kare.
+        /* switch (expression) {
+            case value1:
+            // code to execute
+            break;
+
+            case value2:
+            // code to execute
+            break;
+
+            default:
+            // code to execute if no case matches
+        } */
+
+        // Example: To check the day of the week.
+        /* let dayno = 8;  
+        let dayName;
+        switch (dayno) {
+        case 1:
+            dayName = "Monday";
+            break;
+        case 2:
+            dayName = "Tuesday";
+            break;
+        case 3:
+            dayName = "Wednesday";
+            break;
+        case 4:
+            dayName = "Thursday";
+            break;
+        case 5:
+            dayName = "Friday";
+            break;
+        default:
+            dayName = "Weekend";
+        }
+        console.log(dayName); */
+
+        // Example: To check the grade of a student.
+        let marks = 85;
+        let grade;
+        switch (false) {                 //  true ka use karte hai taaki case ke andar condition check kar sake.
+            case (marks >= 90):
+                grade = "A";
+                break;
+            case (marks >= 80):
+                grade = "B";
+                break;
+            case (marks >= 70):
+                grade = "C";
+                break;
+            case (marks >= 60):
+                grade = "D";
+                break;
+            default:
+                grade = "F";
+        }
+        console.log("Grade:", grade);
+
+    </script>
+  </body>
+</html>
